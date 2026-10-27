@@ -1,0 +1,20 @@
+{
+  "name": "personal-work-agent",
+  "version": "0.9.8",
+  "description": "Personal task routing with scoped verification for code and knowledge work.",
+  "author": {
+    "name": "Yinqi Chen"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Personal Work Agent",
+    "shortDescription": "Personal work, verified",
+    "longDescription": "Routes existing-code maintenance, office deliverables, and investment research, and includes Project Builder for new projects from brief to verified first release, with context-preserving handoffs and action-time permission checks.",
+    "developerName": "Yinqi Chen",
+    "category": "Productivity",
+    "capabilities": [],
+    "composerIcon": "./assets/personal-work-agent.svg",
+    "logo": "./assets/personal-work-agent.svg",
+    "defaultPrompt": "Use $personal-work-agent to complete this task with the right workflow, permission checks, and fresh verification."
+  }
+}

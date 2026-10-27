@@ -1,0 +1,20 @@
+{
+  "exported_at": "2026-10-20T12:00:00Z",
+  "repository": "offline-demo/text-import",
+  "issue": {
+    "number": 42,
+    "state": "open",
+    "title": "Maximum-sized note is rejected",
+    "body": "A 512-byte ASCII note gets note too large. Shorter notes work.",
+    "comments": [
+      {"author": "reporter", "body": "Maybe this is the same as closed issue 21?"},
+      {"author": "maintainer", "body": "The accepted contract remains 512 UTF-8 bytes inclusive. Do not trim or alter note text. Empty notes are permitted. Anything above 512 bytes must raise ValueError with note too large."}
+    ]
+  },
+  "related_issue": {
+    "number": 21,
+    "state": "closed",
+    "title": "Note size validation is wrong",
+    "resolution": "Changed character count to UTF-8 byte count. The maximum stayed 512 bytes."
+  }
+}

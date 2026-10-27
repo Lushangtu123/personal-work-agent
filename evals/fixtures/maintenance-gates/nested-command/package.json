@@ -1,0 +1,8 @@
+{
+  "name": "maintenance-check-fixture",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node scripts/run.mjs"
+  }
+}

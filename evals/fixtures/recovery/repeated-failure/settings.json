@@ -1,0 +1,1 @@
+{"worker":{"region":"west","allowed_output_bucket":"reports-west"},"export":{"output_bucket":"reports-east"}}

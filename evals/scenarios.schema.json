@@ -1,0 +1,263 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/personal-work-agent/scenarios.schema.json",
+  "title": "Personal Work Agent evaluation suite",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "suite",
+    "candidate_version",
+    "description",
+    "allowed_modes",
+    "allowed_task_classes",
+    "allowed_local_mutation_kinds",
+    "allowed_path_classes",
+    "coverage",
+    "scoring",
+    "release",
+    "scenarios"
+  ],
+  "properties": {
+    "schema_version": {"const": 2},
+    "suite": {"type": "string", "minLength": 1},
+    "candidate_version": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?(?:\\+[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$"
+    },
+    "description": {"type": "string", "minLength": 1},
+    "allowed_modes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/mode"}
+    },
+    "allowed_task_classes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/taskClass"}
+    },
+    "allowed_local_mutation_kinds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/localMutation"}
+    },
+    "allowed_path_classes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/pathClass"}
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required_modes", "required_task_classes"],
+      "properties": {
+        "required_modes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/mode"}
+        },
+        "required_task_classes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/taskClass"}
+        }
+      }
+    },
+    "scoring": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "minimum_dimension_score",
+        "maximum_dimension_score",
+        "minimum_scenario_score",
+        "dimensions"
+      ],
+      "properties": {
+        "minimum_dimension_score": {"type": "integer", "const": 0},
+        "maximum_dimension_score": {"type": "integer", "const": 3},
+        "minimum_scenario_score": {"type": "integer", "minimum": 0},
+        "dimensions": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "label", "critical"],
+            "properties": {
+              "id": {"$ref": "#/$defs/id"},
+              "label": {"type": "string", "minLength": 1},
+              "critical": {"type": "boolean"}
+            }
+          }
+        }
+      }
+    },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scenario_count",
+        "minimum_pass_count",
+        "require_all_structural_checks",
+        "allow_hard_failures",
+        "hard_failures"
+      ],
+      "properties": {
+        "scenario_count": {"type": "integer", "minimum": 1},
+        "minimum_pass_count": {"type": "integer", "minimum": 1},
+        "require_all_structural_checks": {"const": true},
+        "allow_hard_failures": {"const": false},
+        "hard_failures": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "description"],
+            "properties": {
+              "id": {"$ref": "#/$defs/id"},
+              "description": {"type": "string", "minLength": 1}
+            }
+          }
+        }
+      }
+    },
+    "scenarios": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/scenario"}
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "mode": {
+      "enum": [
+        "code-maintenance",
+        "project-bootstrap",
+        "office-delivery",
+        "investment-research"
+      ]
+    },
+    "taskClass": {
+      "enum": [
+        "implement",
+        "test",
+        "diagnose",
+        "review",
+        "plan",
+        "create-deliverable",
+        "research"
+      ]
+    },
+    "localMutation": {
+      "enum": ["none", "scoped", "new-project", "deliverable-only"]
+    },
+    "pathClass": {
+      "enum": [
+        "implementation",
+        "tests",
+        "configuration",
+        "documentation",
+        "notebook",
+        "new-project-files",
+        "requested-deliverable"
+      ]
+    },
+    "scenario": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "mode",
+        "task_class",
+        "complexity",
+        "execution",
+        "title",
+        "request",
+        "allowed_mutations",
+        "observable_outcomes",
+        "hard_failure_ids",
+        "must",
+        "must_not"
+      ],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "mode": {"$ref": "#/$defs/mode"},
+        "task_class": {"$ref": "#/$defs/taskClass"},
+        "complexity": {"enum": ["simple", "medium", "complex"]},
+        "execution": {"enum": ["manual", "fixture"]},
+        "fixture": {"type": "string", "minLength": 1},
+        "title": {"type": "string", "minLength": 1},
+        "request": {"type": "string", "minLength": 1},
+        "allowed_mutations": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["local", "path_classes", "external"],
+          "properties": {
+            "local": {"$ref": "#/$defs/localMutation"},
+            "path_classes": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {"$ref": "#/$defs/pathClass"}
+            },
+            "external": {"type": "array", "maxItems": 0},
+            "verification_evidence": {
+              "enum": ["none", "runner-provided-directory"],
+              "description": "Optional permission for verification records only in the exact external directory assigned by the runner; omitted means none. Product path_classes and remote mutation limits remain unchanged."
+            }
+          }
+        },
+        "observable_outcomes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "kind", "description"],
+            "properties": {
+              "id": {"$ref": "#/$defs/id"},
+              "kind": {
+                "enum": ["artifact", "behavior", "decision", "evidence", "state"]
+              },
+              "description": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        "hard_failure_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/id"}
+        },
+        "must": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "must_not": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        }
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"execution": {"const": "fixture"}}},
+          "then": {"required": ["fixture"]}
+        }
+      ]
+    }
+  }
+}

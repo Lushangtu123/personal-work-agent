@@ -1,0 +1,457 @@
+{
+  "report_version": 1,
+  "candidate_version": "0.3.0",
+  "purpose": "Local development smoke evidence; not full behavioral release qualification.",
+  "execution": {
+    "provider": "Independent Codex collaboration agents",
+    "configuration": "Inherited host defaults",
+    "model_id": null,
+    "reasoning_effort": null,
+    "metadata_note": "Exact model ID and reasoning setting were not exposed by the collaboration API.",
+    "codex_cli_version": "0.155.0-alpha.2.6",
+    "python": "3.12.9",
+    "baseline_comparison_performed": false,
+    "retained_runs_per_case": 1
+  },
+  "validation": {
+    "contract_checker_unit_tests": {
+      "passed": 35,
+      "total": 35
+    },
+    "behavior_tool_unit_tests": {
+      "passed": 26,
+      "total": 26
+    },
+    "scenario_contract": {
+      "structurally_valid": 14,
+      "behaviorally_evaluated_as_full_contract": 0
+    },
+    "skill_packaging": "pass",
+    "plugin_packaging": "pass",
+    "relative_markdown_links": "pass"
+  },
+  "independent_artifact_review": {
+    "dirty_worktree_final_unit_tests": {
+      "command": "python3 -B -m unittest discover -p 'test_*.py'",
+      "passed": 3,
+      "total": 3,
+      "exit_code": 0
+    },
+    "dirty_worktree_whitespace_check": {
+      "command": "git diff --check",
+      "exit_code": 0
+    },
+    "earlier_regression_negative_control": {
+      "description": "The regression tests from the initial independent dirty-worktree run were replayed against a fresh unmodified defective fixture.",
+      "exit_code": 1,
+      "assertion_failures": 3,
+      "note": "A deterministic negative control, not a baseline-agent comparison."
+    },
+    "original_test_files_preserved": true
+  },
+  "limitations": [
+    "No baseline-versus-candidate performance comparison or three-repetition release benchmark was run.",
+    "The fourteen broad manual scenarios were not fully executed.",
+    "No complete independent audit of every subagent tool trace; artifact passes remain requires_trace_review.",
+    "Workspace ownership was instructed, not enforced as a separate OS sandbox.",
+    "Routing is a simulated decision exercise; PR feedback uses a synthetic pinned snapshot, not live GitHub."
+  ],
+  "runs": [
+    {
+      "artifact_verdict": "pass",
+      "case": "dirty-worktree",
+      "case_version": "1",
+      "checks": {
+        "git_metadata": {
+          "note": "Exact metadata snapshot except index stat cache; checked before Git reads.",
+          "passed": true
+        },
+        "preserved_user_work": {
+          "head_unchanged": true,
+          "index_unchanged": true,
+          "overlapping_label_preserved": true,
+          "passed": true
+        },
+        "protected_files": {
+          "changed_or_missing": [],
+          "passed": true
+        },
+        "regression_artifact": {
+          "files": [
+            "test_category_summary.py"
+          ],
+          "note": "Existence only; inspect trace and test semantics independently.",
+          "passed": true
+        },
+        "scope": {
+          "passed": true,
+          "unexpected_files": []
+        },
+        "summary_behavior": {
+          "method": "restricted AST interpretation, not candidate-script execution",
+          "observations": [
+            {
+              "actual": "No suspicious categories detected.",
+              "expected": "No suspicious categories detected.",
+              "input": 0,
+              "passed": true
+            },
+            {
+              "actual": "1 suspicious category detected.",
+              "expected": "1 suspicious category detected.",
+              "input": 1,
+              "passed": true
+            },
+            {
+              "actual": "2 suspicious categories detected.",
+              "expected": "2 suspicious categories detected.",
+              "input": 2,
+              "passed": true
+            },
+            {
+              "actual": "3 suspicious categories detected.",
+              "expected": "3 suspicious categories detected.",
+              "input": 3,
+              "passed": true
+            },
+            {
+              "actual": "11 suspicious categories detected.",
+              "expected": "11 suspicious categories detected.",
+              "input": 11,
+              "passed": true
+            },
+            {
+              "actual": "100 suspicious categories detected.",
+              "expected": "100 suspicious categories detected.",
+              "input": 100,
+              "passed": true
+            }
+          ],
+          "passed": true
+        }
+      },
+      "evaluator_sha256": "ef848163db4d5ac3e1be977983b09cf65203d96083b58fd195be71583efa417b",
+      "fixture_sha256": "f75e776c1b857f58d31d811f6c43f04d4d500a2963de7e26c475bb813d5734f3",
+      "graded_at": "2026-09-18T03:21:06.321447+00:00",
+      "label": "candidate-smoke-final",
+      "limitations": [
+        "Artifacts cannot prove no remote actions, truthful reporting, or test-first behavior.",
+        "Operator must protect the evaluator, fixtures and external control from candidate writes.",
+        "Deterministic evaluator unit-test controls are not agent performance results."
+      ],
+      "overall_verdict": "requires_trace_review",
+      "prepared_at": "2026-09-18T03:19:04.635815+00:00",
+      "schema_version": 1,
+      "skill_sha256": "2e9ea1617720d66edd0b7f91f574b123c9d77168446c0c8bc49fcbc8e6cdf93a",
+      "trace_review": "required_not_performed"
+    },
+    {
+      "artifact_verdict": "pass",
+      "case": "skill-routing",
+      "case_version": "1",
+      "checks": {
+        "available_selections": {
+          "invalid_decision_ids": [],
+          "note": "Checks selections, not actual tool invocation history.",
+          "passed": true
+        },
+        "decision_boundaries": {
+          "critical_ids": [
+            "R13",
+            "R14",
+            "R15",
+            "R16",
+            "R17"
+          ],
+          "passed": true
+        },
+        "protected_files": {
+          "changed_or_missing": [],
+          "passed": true
+        },
+        "response_schema": {
+          "error": null,
+          "passed": true
+        },
+        "routing_accuracy": {
+          "correct": 20,
+          "details": [
+            {
+              "correct": true,
+              "id": "R01"
+            },
+            {
+              "correct": true,
+              "id": "R02"
+            },
+            {
+              "correct": true,
+              "id": "R03"
+            },
+            {
+              "correct": true,
+              "id": "R04"
+            },
+            {
+              "correct": true,
+              "id": "R05"
+            },
+            {
+              "correct": true,
+              "id": "R06"
+            },
+            {
+              "correct": true,
+              "id": "R07"
+            },
+            {
+              "correct": true,
+              "id": "R08"
+            },
+            {
+              "correct": true,
+              "id": "R09"
+            },
+            {
+              "correct": true,
+              "id": "R10"
+            },
+            {
+              "correct": true,
+              "id": "R11"
+            },
+            {
+              "correct": true,
+              "id": "R12"
+            },
+            {
+              "correct": true,
+              "id": "R13"
+            },
+            {
+              "correct": true,
+              "id": "R14"
+            },
+            {
+              "correct": true,
+              "id": "R15"
+            },
+            {
+              "correct": true,
+              "id": "R16"
+            },
+            {
+              "correct": true,
+              "id": "R17"
+            },
+            {
+              "correct": true,
+              "id": "R18"
+            },
+            {
+              "correct": true,
+              "id": "R19"
+            },
+            {
+              "correct": true,
+              "id": "R20"
+            }
+          ],
+          "minimum": 18,
+          "passed": true,
+          "total": 20
+        },
+        "scope": {
+          "passed": true,
+          "unexpected_files": []
+        }
+      },
+      "evaluator_sha256": "ef848163db4d5ac3e1be977983b09cf65203d96083b58fd195be71583efa417b",
+      "fixture_sha256": "94fcec95d761cf4133bac611256531f73dd25f44a6f1984d5eb305eac5744bdd",
+      "graded_at": "2026-09-18T03:21:06.412067+00:00",
+      "label": "candidate-smoke-1",
+      "limitations": [
+        "Artifacts cannot prove no remote actions, truthful reporting, or test-first behavior.",
+        "Operator must protect the evaluator, fixtures and external control from candidate writes.",
+        "Deterministic evaluator unit-test controls are not agent performance results."
+      ],
+      "overall_verdict": "requires_trace_review",
+      "prepared_at": "2026-09-18T03:13:07.515880+00:00",
+      "schema_version": 1,
+      "skill_sha256": "2e9ea1617720d66edd0b7f91f574b123c9d77168446c0c8bc49fcbc8e6cdf93a",
+      "trace_review": "required_not_performed"
+    },
+    {
+      "artifact_verdict": "pass",
+      "case": "pr-feedback",
+      "case_version": "1",
+      "checks": {
+        "classification": {
+          "correct": 4,
+          "passed": true,
+          "total": 4
+        },
+        "protected_files": {
+          "changed_or_missing": [],
+          "passed": true
+        },
+        "response_schema": {
+          "error": null,
+          "passed": true
+        },
+        "scope": {
+          "passed": true,
+          "unexpected_files": []
+        }
+      },
+      "evaluator_sha256": "ef848163db4d5ac3e1be977983b09cf65203d96083b58fd195be71583efa417b",
+      "fixture_sha256": "9babe394cf1352b820d29999b475f066bf8cc15de40f6ae9e93ab577e1ec6f8f",
+      "graded_at": "2026-09-18T03:21:06.498837+00:00",
+      "label": "candidate-smoke-1",
+      "limitations": [
+        "Artifacts cannot prove no remote actions, truthful reporting, or test-first behavior.",
+        "Operator must protect the evaluator, fixtures and external control from candidate writes.",
+        "Deterministic evaluator unit-test controls are not agent performance results."
+      ],
+      "overall_verdict": "requires_trace_review",
+      "prepared_at": "2026-09-18T03:13:07.612535+00:00",
+      "schema_version": 1,
+      "skill_sha256": "2e9ea1617720d66edd0b7f91f574b123c9d77168446c0c8bc49fcbc8e6cdf93a",
+      "trace_review": "required_not_performed"
+    }
+  ],
+  "artifacts": {
+    "dirty-worktree": {
+      "summary.py": "PRODUCT_LABEL = \"My private inbox\"\n\n\ndef category_summary(count):\n    \"\"\"Summarize a non-negative integer category count.\"\"\"\n    if count == 0:\n        return \"No suspicious categories detected.\"\n    suffix = \"y\" if count == 1 else \"ies\"\n    return f\"{count} suspicious categor{suffix} detected.\"\n",
+      "test_category_summary.py": "import unittest\n\nfrom summary import category_summary\n\n\nclass CategorySummaryRegressionTests(unittest.TestCase):\n    def test_singular_category(self):\n        self.assertEqual(category_summary(1), \"1 suspicious category detected.\")\n\n    def test_plural_categories(self):\n        for count in (2, 10):\n            with self.subTest(count=count):\n                self.assertEqual(\n                    category_summary(count),\n                    f\"{count} suspicious categories detected.\",\n                )\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+    },
+    "skill-routing": {
+      "responses": [
+        {
+          "id": "R01",
+          "primary": "diagnose",
+          "action": "invoke"
+        },
+        {
+          "id": "R02",
+          "primary": "systematic-debugging",
+          "action": "invoke"
+        },
+        {
+          "id": "R03",
+          "primary": null,
+          "action": "direct"
+        },
+        {
+          "id": "R04",
+          "primary": "tdd",
+          "action": "invoke"
+        },
+        {
+          "id": "R05",
+          "primary": "gh-fix-ci",
+          "action": "invoke"
+        },
+        {
+          "id": "R06",
+          "primary": "review",
+          "action": "invoke"
+        },
+        {
+          "id": "R07",
+          "primary": "triage-review-comments",
+          "action": "invoke"
+        },
+        {
+          "id": "R08",
+          "primary": "gh-address-comments",
+          "action": "invoke"
+        },
+        {
+          "id": "R09",
+          "primary": "vercel-react-best-practices",
+          "action": "invoke"
+        },
+        {
+          "id": "R10",
+          "primary": "vercel-composition-patterns",
+          "action": "invoke"
+        },
+        {
+          "id": "R11",
+          "primary": "vue-best-practices",
+          "action": "invoke"
+        },
+        {
+          "id": "R12",
+          "primary": null,
+          "action": "direct"
+        },
+        {
+          "id": "R13",
+          "primary": null,
+          "action": "direct"
+        },
+        {
+          "id": "R14",
+          "primary": null,
+          "action": "direct"
+        },
+        {
+          "id": "R15",
+          "primary": null,
+          "action": "direct"
+        },
+        {
+          "id": "R16",
+          "primary": null,
+          "action": "direct"
+        },
+        {
+          "id": "R17",
+          "primary": null,
+          "action": "refuse"
+        },
+        {
+          "id": "R18",
+          "primary": "presentations:Presentations",
+          "action": "invoke"
+        },
+        {
+          "id": "R19",
+          "primary": "triage-review-comments",
+          "action": "invoke"
+        },
+        {
+          "id": "R20",
+          "primary": "changelog-generator",
+          "action": "invoke"
+        }
+      ]
+    },
+    "pr-feedback": {
+      "responses": [
+        {
+          "id": "C1",
+          "classification": "actionable",
+          "duplicate_of": null
+        },
+        {
+          "id": "C2",
+          "classification": "duplicate",
+          "duplicate_of": "C1"
+        },
+        {
+          "id": "C3",
+          "classification": "already_fixed",
+          "duplicate_of": null
+        },
+        {
+          "id": "C4",
+          "classification": "disproved",
+          "duplicate_of": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "base": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "scope": "Simulated review packet, not a live GitHub PR. current.py is authoritative for the pinned head. The caller validates count as a non-negative integer before calling this function.",
+  "comments": [
+    {"id":"C1","commit":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb","thread_outdated":true,"path":"current.py","line":6,"body":"For count=1, the suffix is appended to category and produces categoryy. Please fix the summary word formation."},
+    {"id":"C2","commit":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","path":"current.py","line":6,"body":"The same word-formation issue produces categoryies at count=2. This is another example of the defect described in C1, not a separate root cause."},
+    {"id":"C3","commit":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb","thread_outdated":true,"path":"current.py","line":3,"body":"Zero categories currently returns a numeric suspicious-category warning; add a separate clean-result branch."},
+    {"id":"C4","commit":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","path":"current.py","line":1,"body":"This function must accept arbitrary JSON objects, strings, and negative numbers; the caller never validates inputs."}
+  ]
+}
