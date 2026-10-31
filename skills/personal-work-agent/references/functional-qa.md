@@ -14,6 +14,12 @@ Keep a small case table for the affected flow:
 
 Add only contract-relevant boundaries: invalid input or denied access, dependency failure, retry/duplicate delivery, cancellation, or partial completion. Do not assume every operation is idempotent, cancellable, or synchronous. Resolve material ambiguity before labeling its behavior a defect; do not invent new product requirements from the case list.
 
+For a backend reliability change, use the affected-risk matrix in
+[backend-reliability.md](backend-reliability.md): verify truthful error/state,
+query/call growth, concurrent invariants or the actual timeout/retry budget as
+relevant. Retain real-store/client versus substitute boundaries; no need to run
+all four families for an unrelated change.
+
 ## Execute within a safe boundary
 
 - Use isolated, owned fixtures with known initial state. Inspect invoked scripts and configuration for side effects under [permissions.md](permissions.md) before executing them. Authorization to modify code does not authorize production data changes, messages, payments, or live dependency probes.

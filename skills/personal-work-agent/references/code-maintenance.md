@@ -32,6 +32,12 @@ For issue/backlog triage or a report that needs an execution brief, read [issue-
 
 Trace the affected entry point, call path, data contract, persistence, tests, and user-visible behavior. Check for implications to authentication, authorization, migrations, caching, queues, environment variables, API compatibility, accessibility, and deployment.
 
+When the affected path changes backend error handling, database access, concurrent
+state transitions, jobs/webhooks or outbound HTTP/RPC calls, read the relevant
+sections of [backend-reliability.md](backend-reliability.md) before implementation
+or review. Carry its affected-risk checks into final validation; ordinary wording,
+frontend presentation or isolated calculation work does not trigger a service audit.
+
 When cross-file navigation or impact discovery is substantial, read [codegraph-navigation.md](codegraph-navigation.md) for optional use of an already-available CodeGraph capability. Skip it for a localized task with known source and tests. Missing graph tools do not block native search, and graph output does not establish runtime behavior or replace verification.
 
 For risky or broad changes, state the proposed boundary before implementation. Avoid unrelated cleanup.

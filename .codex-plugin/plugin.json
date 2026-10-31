@@ -1,6 +1,6 @@
 {
   "name": "personal-work-agent",
-  "version": "0.9.8",
+  "version": "0.9.11",
   "description": "Personal task routing with scoped verification for code and knowledge work.",
   "author": {
     "name": "Yinqi Chen"

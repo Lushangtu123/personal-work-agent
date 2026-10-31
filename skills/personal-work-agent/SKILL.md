@@ -2,7 +2,7 @@
 name: personal-work-agent
 description: Route multi-step personal work across existing codebases, new software projects, office deliverables, and investment research. Use when a task needs repository context, multiple specialist capabilities, permission boundaries, or coordinated verification; use a narrower specialist skill directly for one isolated operation or format.
 metadata:
-  version: "0.9.8"
+  version: "0.9.11"
 ---
 
 # Personal Work Agent
