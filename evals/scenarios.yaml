@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "suite": "personal-work-agent-v8",
-  "candidate_version": "0.9.8",
+  "candidate_version": "0.9.11",
   "description": "Behavioral contract for the personal work agent. This file is JSON-compatible YAML so the deterministic checker needs only the Python standard library.",
   "allowed_modes": [
     "code-maintenance",

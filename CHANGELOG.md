@@ -2,6 +2,24 @@
 
 ## Unreleased
 
+## 0.9.11 — 2026-10-30
+
+- Add conditional backend reliability guidance for truthful failures, query/fan-out growth, shared-state invariants and bounded safe network retries.
+- Connect maintenance impact analysis, cross-boundary acceptance and Project Builder with standalone fallback; preserve framework choice and existing SDK policies.
+- Add offline supplemental reliability fixture coverage without changing the core26 scenario or routing contract and release thresholds.
+
+## 0.9.10 — 2026-10-28
+
+- Distinguish Hallmark raw findings from evidence-bound project applicability and reviewer dispositions.
+- Keep missing observations and changed-source reports unverified; accepted design choices do not resolve defects or certify acceptance.
+- Preserve all routing cases, core scenarios and release thresholds.
+
+## 0.9.9 — 2026-10-27
+
+- Route scoped visual work to the optional Hallmark adapter while preserving project design systems, user changes and native acceptance.
+- Pass existing briefs and external evidence paths from Project Builder; no automatic hooks, image API calls, runtime installs or cross-host sync.
+- Add five routing cases and keep the 26 core scenarios and release thresholds unchanged.
+
 ## 0.9.8 — 2026-10-26
 
 - Preserve legitimate empty/whitespace CLI arguments in command capture and report facts, while rejecting blank executables, NUL bytes and non-string arguments.

@@ -82,4 +82,11 @@ These unit tests intentionally include deterministic positive and negative contr
 
 ## Additional maintenance fixtures
 
+For backend errors, query growth, concurrent state and network-policy work, see
+[backend-reliability.md](backend-reliability.md). Its offline task is supplemental;
+controlled fixture repairs are not independent native-model behavior runs and do
+not change the core26 release contract.
+
 `fixtures/property-contract` and `fixtures/security-patch` contain small offline tasks for independent model runs. Copy each directory into a fresh workspace and supply only its task, raw files, and the selected frozen skill. They are not `behavior.py` CLI cases and have no automatic artifact verdict. Inspect changes before executing code, independently check the product contract and original/variant/benign outcomes, then retain evidence and review limitations. Existing starter tests are not hidden acceptance tests.
+
+Behavior case version 5 adds five Hallmark routing boundaries (explicit audit, backend exclusion, absent skill, generic accessibility audit and unavailable browser) without changing the 26 core scenarios or their release thresholds. New cases require fresh native observations; deterministic evaluator controls alone do not qualify routing behavior.

@@ -2,7 +2,7 @@
 name: project-builder
 description: Build new software projects from an idea or approved brief through a verified first release. Use when starting an app, service, CLI, library, or prototype from scratch, or resuming its unfinished initial build. Works directly or as Personal Work Agent's greenfield specialist; not the default for routine changes to an established project.
 metadata:
-  version: "0.9.8"
+  version: "0.9.11"
 ---
 
 # Project Builder
@@ -52,7 +52,27 @@ Use the existing test-first workflow when appropriate; select one test methodolo
 
 Mock or fixture external services when access is unavailable, with the substitute clearly labeled. Do not present mock-only flows as live integrations. Avoid placeholder authentication, swallowed failures, fabricated data, or disabled checks that make an unfinished feature look complete.
 
+For a slice affecting backend errors, database access, shared-state transitions
+or outbound HTTP/RPC, read the available bundled
+[backend reliability guide](../personal-work-agent/references/backend-reliability.md)
+and carry its affected-risk checks into acceptance. In a standalone import without
+that reference, retain the same essentials: truthful errors and final state,
+bounded query/fan-out growth, a store-level concurrency invariant, and a bounded
+deadline/retry policy safe for the operation's semantics. Verify only relevant
+boundaries with native evidence; transactions alone and fake-client tests do not
+prove production concurrency or network behavior. Do not install PWA to resolve
+the link, mandate a framework or add a retry layer over an existing SDK by default.
+
 For independent parallel work, assign non-overlapping owned paths and explicit interface contracts. Integrate and verify the combined result before claiming completion; a worker's report is not evidence by itself.
+
+For a frontend visual slice, the optional `hallmark` specialist can provide a
+theme library and static feedback when it is available and matches the task.
+When available in this bundle, read the [visual handoff](../personal-work-agent/references/visual-design.md).
+For standalone use without it, pass the known brief, design rules, authorized paths
+and external evidence directory directly; do not install PWA to satisfy this link.
+Use one visual guide.
+Existing design rules remain authoritative; static findings do not replace
+browser acceptance. Ordinary backend, CI and localized bug work do not trigger it.
 
 ## Verify and hand off
 
