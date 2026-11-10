@@ -16,6 +16,15 @@ For each essential journey identify initial state, user input/action, expected r
 
 Do not impose irrelevant rows. A local utility need not gain a database or browser suite. Conversely, do not drop auth/access boundaries, validation, data integrity, or other agreed requirements to obtain an early green result.
 
+Carry accepted quality targets, exact units, workload/environment and verification
+from the project contract. If operating goals are in scope, use the available
+[operational readiness guide](../../personal-work-agent/references/operational-readiness.md).
+If unavailable, check only applicable startup/shutdown, capacity/resources,
+dependency recovery, observability, data restoration and rollout behavior against
+the contract; preserve missing evidence and permissions rather than installing
+tools or inventing passing thresholds. A goal changed or deferred without agreed
+scope direction remains open.
+
 ## Fresh evidence
 
 - For multi-command verification, retries or precise runtime versions, use the bundled [command evidence helper](../../personal-work-agent/references/command-evidence.md) before running and reporting checks. If used standalone without the helper, retain original conclusive tool outputs and disclose the unavailable structured gate; do not install PWA, forge receipts or rerun an uncertain external action.

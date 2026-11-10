@@ -26,15 +26,32 @@ For dependency upgrades, framework/API migrations, version-sensitive guidance, o
 
 For existing PR comments or review threads, read [pr-maintenance.md](pr-maintenance.md). Reviewing feedback, implementing selected fixes, and replying to or resolving remote threads are separate actions with separate scope checks.
 
+For an explicit security audit, focused vulnerability review or concrete affected
+trust-boundary risk, read [security-audit.md](security-audit.md). Keep its coverage,
+finding verdicts and source-versus-behavior evidence scoped to the request. Ordinary
+maintenance does not trigger a full audit, scanner installation or remediation.
+
 For issue/backlog triage or a report that needs an execution brief, read [issue-intake.md](issue-intake.md). For requested architecture opportunities or concrete structural friction, read [architecture-assessment.md](architecture-assessment.md). These are conditional assessment branches, not automatic steps or authorization to implement their recommendations.
 
 ## 3. Analyze impact
 
 Trace the affected entry point, call path, data contract, persistence, tests, and user-visible behavior. Check for implications to authentication, authorization, migrations, caching, queues, environment variables, API compatibility, accessibility, and deployment.
 
+When the affected path changes backend error handling, database schema, migrations
+or access, concurrent state transitions, jobs/webhooks or outbound HTTP/RPC calls,
+read the relevant sections of [backend-reliability.md](backend-reliability.md) before implementation
+or review. Carry its affected-risk checks into final validation; ordinary wording,
+frontend presentation or isolated calculation work does not trigger a service audit.
+
 When cross-file navigation or impact discovery is substantial, read [codegraph-navigation.md](codegraph-navigation.md) for optional use of an already-available CodeGraph capability. Skip it for a localized task with known source and tests. Missing graph tools do not block native search, and graph output does not establish runtime behavior or replace verification.
 
 For risky or broad changes, state the proposed boundary before implementation. Avoid unrelated cleanup.
+
+When the change materially affects agreed quality/capacity/recovery goals, read
+[quality-contract.md](quality-contract.md). For affected service lifecycle,
+resource behavior, backup/restore, observability or rollout readiness, use the
+relevant [operational-readiness.md](operational-readiness.md) checks. A local bug
+fix with no such boundary does not trigger a production-readiness campaign.
 
 When intent or scope needs discussion, use [task-sizing.md](task-sizing.md). Reuse the user's approved description; do not create a separate design document or repeat approval for a clear localized fix.
 

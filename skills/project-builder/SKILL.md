@@ -2,7 +2,7 @@
 name: project-builder
 description: Build new software projects from an idea or approved brief through a verified first release. Use when starting an app, service, CLI, library, or prototype from scratch, or resuming its unfinished initial build. Works directly or as Personal Work Agent's greenfield specialist; not the default for routine changes to an established project.
 metadata:
-  version: "0.9.8"
+  version: "0.9.15"
 ---
 
 # Project Builder
@@ -32,6 +32,14 @@ Reuse answers already provided. Resolve only choices that materially change impl
 - Target directory, platform/runtime, data sensitivity, external systems, hosting and cost constraints.
 - Acceptance examples for the core flow and its important failure paths.
 
+For a maintained product or material operating design, read the available bundled
+[quality contract](../personal-work-agent/references/quality-contract.md). Keep
+applicable reliability, workload/latency/resource, recovery, security and maintenance
+goals in the existing brief with source, exact units, environment and verification.
+Separate accepted targets from proposals and unknowns. Standalone without that
+reference, retain those essentials directly; do not install PWA or impose service
+objectives on a small local utility. Resolve only consequential missing choices.
+
 For a clear small request, state reasonable assumptions and proceed. For consequential uncertainty, use an available clarification/design skill or ask the smallest useful question before committing to that choice. Do not silently turn a multi-user product into a local demo, or invent user approval. Keep a durable brief only when it helps substantial or cross-session work; do not create a fixed pile of planning documents for every project.
 
 When project terms or lasting design decisions need documentation, read the bundled [project-knowledge guidance](../personal-work-agent/references/project-knowledge.md), without re-entering PWA routing. If used outside the bundle and that reference is unavailable, reuse existing docs, distinguish confirmed decisions from proposals, and preserve exact acceptance criteria; do not install PWA just to write notes. Plan-only work still does not authorize document changes unless a saved deliverable was requested.
@@ -52,11 +60,44 @@ Use the existing test-first workflow when appropriate; select one test methodolo
 
 Mock or fixture external services when access is unavailable, with the substitute clearly labeled. Do not present mock-only flows as live integrations. Avoid placeholder authentication, swallowed failures, fabricated data, or disabled checks that make an unfinished feature look complete.
 
+For a slice affecting backend errors, database access, shared-state transitions
+or outbound HTTP/RPC, read the available bundled
+[backend reliability guide](../personal-work-agent/references/backend-reliability.md)
+and carry its affected-risk checks into acceptance. In a standalone import without
+that reference, retain the same essentials: truthful errors and final state,
+bounded query/fan-out growth, a store-level concurrency invariant, and a bounded
+deadline/retry policy safe for the operation's semantics. Verify only relevant
+boundaries with native evidence; transactions alone and fake-client tests do not
+prove production concurrency or network behavior. Do not install PWA to resolve
+the link, mandate a framework or add a retry layer over an existing SDK by default.
+
+When choosing a schema or changing migrations or durable writes, use the database
+integrity section of that guide before implementation. For standalone use, define
+which rules the store enforces across writers, how existing rows are handled, and
+which valid/rejected writes and committed state the release will check.
+
 For independent parallel work, assign non-overlapping owned paths and explicit interface contracts. Integrate and verify the combined result before claiming completion; a worker's report is not evidence by itself.
+
+For a frontend visual slice, the optional `hallmark` specialist can provide a
+theme library and static feedback when it is available and matches the task.
+When available in this bundle, read the [visual handoff](../personal-work-agent/references/visual-design.md).
+For standalone use without it, pass the known brief, design rules, authorized paths
+and external evidence directory directly; do not install PWA to satisfy this link.
+Use one visual guide.
+Existing design rules remain authoritative; static findings do not replace
+browser acceptance. Ordinary backend, CI and localized bug work do not trigger it.
 
 ## Verify and hand off
 
 Read [references/acceptance.md](references/acceptance.md) before the first-release claim. A scaffold, server startup, screenshot, or green unit suite alone does not establish the requested outcome. If the environment blocks execution, preserve useful work and report the exact blocked check instead of claiming readiness.
+
+When service lifecycle, sustained capacity, observability, backup/restore or rollout
+is part of acceptance, use the available bundled
+[operational readiness](../personal-work-agent/references/operational-readiness.md)
+guide. Without it, retain the agreed goal/environment, bounded check, observed
+outcome and explicit gaps; a health200, backup file or local unit pass does not
+prove those operating goals. No shared-system load, fault injection, restoration,
+alert sending or deployment is implicitly authorized by a readiness review.
 
 Provide the project location, actual start/test commands and prerequisites, supported user flows, acceptance evidence, relevant decisions, and remaining gaps. Update an existing README or equivalent entry document when appropriate; do not leave essential setup only in chat.
 

@@ -10,6 +10,15 @@ Use this reference when a request is ambiguous, spans modes, or could activate o
 4. A specialist's project-specific conventions do not become this repository's conventions. Do not carry Binder, Linear, Composio, automatic commits, messages, or deployment steps into a task that did not request them. If the specialist cannot be used within the authorized scope, use the native fallback and explain the limitation.
 5. Load only the chosen workflow and useful helpers. Do not load every entry in this table. A user-named skill takes precedence over these defaults when available and applicable, subject to higher-priority instructions and action-time permissions.
 
+For complex or resumed cross-skill work, retain the small selection/ownership/return
+record in [work-coordination.md](work-coordination.md). Resolve an overlapping guide
+by task fit and authoritative project constraints; do not merge competing recipes
+or claim an unavailable specialist was invoked. A simple task needs no route log.
+
+When substantial retrieval produces repeated results without resolving the
+question, use the reassessment guidance in [token-efficiency.md](token-efficiency.md)
+before adding equivalent tools. A routine successful lookup needs no extra gate.
+
 ## Route by task class
 
 | Task class | Primary behavior | Optional specialist | Boundary |
@@ -23,11 +32,14 @@ Use this reference when a request is ambiguous, spans modes, or could activate o
 | Clarify or document project terminology/decisions | Follow [project-knowledge.md](project-knowledge.md); preserve source, context, status and exact requirements | Existing repository documentation workflow | No forced glossary/ADR, silent conflict resolution, code renaming, or publication |
 | Review or extend tests | Check observable contract, credible failure, coverage gap, and production boundary | Existing test specialist only as needed | Read [test-strategy.md](test-strategy.md); audit-only requests do not authorize test deletion |
 | Cross-boundary acceptance | Verify the affected flow and final state | Existing native API/CLI/job/browser tools | Read [functional-qa.md](functional-qa.md); no implicit live probes or installations |
+| Maintained-project quality goals | Follow [quality-contract.md](quality-contract.md); preserve accepted targets, units, workload and verification | Domain specialist only for the affected risk | No universal SLOs, second intake, automatic infrastructure or proposed targets presented as agreed |
+| Service operational readiness | Follow [operational-readiness.md](operational-readiness.md) for affected lifecycle, capacity, recovery or rollout goals | Existing local/native tools and runbooks | Readiness review does not authorize shared-system load/faults, deployment, restores over data or external alert delivery |
 | Audit or update skills | Inventory exact paths and review the selected change | `manage-skills` when its CLI and existing database work; `skill-creator` for authored changes | Read [skill-governance.md](skill-governance.md); no implicit library migration, bulk sync, or auto-approval |
 | Assess architecture opportunities | Follow [architecture-assessment.md](architecture-assessment.md); ground candidates in current maintenance friction | `improve-codebase-architecture` only if available and compatible with scope | Assessment remains read-only; no mandatory report, dependency chain or refactor |
 | Triage an issue or prepare an execution brief | Follow [issue-intake.md](issue-intake.md); separate report, reproduction and intended contract | `triage` only if available and compatible with scope | No automatic tracker writes, closure, label setup or implementation |
 | Implement an architectural or broad change | Reuse the agreed acceptance contract and a short implementation plan | Framework or security specialist for the affected boundary | Reconfirm scope only when new evidence materially changes the approved architecture or migration boundary |
 | Review a branch or PR | Review from a fixed base or merge-base | Use `review` for an explicitly requested diff review | Review is read-only unless fixes are requested |
+| Security audit or focused vulnerability review | Follow [security-audit.md](security-audit.md); trace current source, counter-evidence and scoped coverage | An available compatible security specialist; independent review for consequential/disputed claims when permitted | No implicit full audit, external probes, scanner install, private-data egress or fix; retain needs-validation and execution limits |
 | Handle existing PR review comments | Validate each finding against the current PR HEAD before deciding or fixing | Prefer `triage-review-comments`; use `gh-address-comments` for supported collection or authorized fixes | Read [pr-maintenance.md](pr-maintenance.md); replies, thread resolution, push, and merge are separate actions |
 | GitHub Actions CI failure | Inspect checks and logs, then isolate the cause | Use `gh-fix-ci` | Do not generalize external CI providers as GitHub Actions |
 | Upgrade dependencies or migrate APIs | Verify resolved versions, compatibility, and small reviewable batches | Use a migration specialist only if its prerequisites and side effects fit | Read [version-aware-maintenance.md](version-aware-maintenance.md); no implicit package install, live migration, or release |
@@ -63,6 +75,7 @@ These are optional candidates, not installation requirements. Use only names pre
 | Vitest tests | `vitest` | Repository actually uses a compatible Vitest version | Existing configured test runner; do not introduce Vitest to unrelated stacks |
 | Browser reproduction | `playwright` or `webapp-testing` | Supported browser tools, safe local target; choose one for the requested operation | Existing E2E suite or an explicit manual reproduction; do not install browsers silently |
 | Accessibility / UI audit | `web-design-guidelines` | Requested or relevant UI audit, read-only unless changes authorized | Inspect affected UI against applicable requirements |
+| Hallmark visual design / audit | `hallmark` | New page visual work matching its description, or an existing interface where the user explicitly requests Hallmark audit, polish or redesign; actual host tools available | Follow [visual-design.md](visual-design.md); preserve existing design systems and use native UI checks. Ordinary backend, CI and bug fixes do not trigger it |
 | Context setup or degradation | `context-engineering` | Available in the current catalog and the task matches a trigger in `SKILL.md` | Load only relevant rules, files, constraints, and live evidence; use the coordination ledger for cross-session continuity |
 | Cross-file call paths or change impact | Existing CodeGraph MCP/CLI, following [codegraph-navigation.md](codegraph-navigation.md) | Actual callable capability and known target project; index freshness may remain unknown | Native search/current source is the fallback; setup uses `codegraph-bootstrap` only when authorized, with no implicit install, indexing or hooks |
 | Token-efficient code | `ponytail` | Installed, applicable, and the task has genuine over-build choices or explicitly requests it | Read [token-efficiency.md](token-efficiency.md); use repository-native reuse, standard library, native platform, existing dependencies, then minimum new code |

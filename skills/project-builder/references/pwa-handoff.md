@@ -19,6 +19,7 @@ Carry these facts in the current conversation or an existing brief, not a mandat
 | Target | Exact workspace/project boundary, existing files, applicable instructions, relevant Git state if present |
 | Decisions | Confirmed requirements and architecture, with relevant authoritative glossary/decision/spec paths or anchors; distinguish user choices from agent assumptions and personal preferences |
 | Acceptance | Observable successful and important unsuccessful journeys; agreed prototype/production limits |
+| Quality goals | Relevant accepted targets with units, workload/environment, source authority and planned checks; proposals/unknowns separate |
 | Constraints | Data/privacy, platform, budget, external dependencies, authorized actions and pending approvals |
 | Progress | Current slice, touched files, completed checks with evidence, known blockers, next step |
 
@@ -41,6 +42,12 @@ Report one outcome appropriate to the current intent:
 - `VERIFIED_FIRST_RELEASE`: all agreed first-release acceptance criteria have fresh supporting evidence, with any agreed exclusions explicit. This is not automatically production readiness.
 
 Include target path, actual changed files, current slice, commands/results and their scope, real versus substituted integrations, setup prerequisites, and unresolved items. Preserve known external-operation targets and uncertainty; do not retry an ambiguous mutation during handoff.
+
+For complex cross-skill work retain which workflow/helper actually handled each
+boundary, its return evidence and next owner in the existing record. Distinguish
+guide selection from actual worker delegation. Preserve quality goals and test
+environment through the transition; changed source/config/workload can invalidate
+old readiness evidence even if functional tests still pass.
 
 Carry exact constraints and acceptance checks as well as links to relevant vocabulary and decisions. Do not let a glossary or ADR replace the product contract, and do not mark an accepted design as implemented or verified without evidence.
 

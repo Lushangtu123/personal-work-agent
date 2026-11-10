@@ -2,6 +2,49 @@
 
 ## Unreleased
 
+## 0.9.15 — 2026-11-10
+
+- Route schema, migration and durable-write changes to scoped database integrity checks, including existing data, alternate writers and final stored state.
+- Add an opt-in, read-only audit for named project records or accessible memory sources, with evidence and approval before applying any recommendation.
+- Add supplemental database and knowledge-audit cases. Preserve the core26 scenarios, release thresholds and token-efficiency reference.
+
+## 0.9.14 — 2026-11-02
+
+- Carry applicable quality goals with source authority, exact units, workload/environment and acceptance through project setup and handoff.
+- Add on-demand operational readiness guidance for lifecycle, sustained capacity, dependency recovery, observability, data restoration and rollout, with explicit execution boundaries.
+- Retain compact workflow/helper ownership and return evidence for complex/resumed work without per-task tracking files or an automatic scheduler.
+- Add supplemental forward scenarios for relevant/irrelevant routing, unavailable or conflicting guides and stale continuation evidence; core26 cases and thresholds remain unchanged.
+
+## 0.9.13 — 2026-11-02
+
+- Add on-demand security-audit coverage, counter-evidence, stable finding verdicts and independent-review boundaries, with an optional scoped report template.
+- Keep source conclusions, runtime-dependent claims and repair verification separate; preserve existing patch original/variant/benign checks and missing-evidence outcomes.
+- Add four offline security-review forward tasks without external scanners, hooks, dependency installs, live probes or changes to core26 scoring and thresholds. Observed runs and limitations are recorded separately.
+
+## 0.9.12 — 2026-10-31
+
+- Prefer targeted bounded retrieval with original-evidence anchors and recovery when summaries are insufficient.
+- Reassess repeated tool attempts that add no evidence, while preserving required validation, same-fix diagnosis and uncertain-write reconciliation.
+- Add offline token-efficiency forward tasks and a small-task control; preserve core26 scenarios, routing decisions and release thresholds. Actual behavior and savings require separate observed runs.
+
+## 0.9.11 — 2026-10-30
+
+- Add conditional backend reliability guidance for truthful failures, query/fan-out growth, shared-state invariants and bounded safe network retries.
+- Connect maintenance impact analysis, cross-boundary acceptance and Project Builder with standalone fallback; preserve framework choice and existing SDK policies.
+- Add offline supplemental reliability fixture coverage without changing the core26 scenario or routing contract and release thresholds.
+
+## 0.9.10 — 2026-10-28
+
+- Distinguish Hallmark raw findings from evidence-bound project applicability and reviewer dispositions.
+- Keep missing observations and changed-source reports unverified; accepted design choices do not resolve defects or certify acceptance.
+- Preserve all routing cases, core scenarios and release thresholds.
+
+## 0.9.9 — 2026-10-27
+
+- Route scoped visual work to the optional Hallmark adapter while preserving project design systems, user changes and native acceptance.
+- Pass existing briefs and external evidence paths from Project Builder; no automatic hooks, image API calls, runtime installs or cross-host sync.
+- Add five routing cases and keep the 26 core scenarios and release thresholds unchanged.
+
 ## 0.9.8 — 2026-10-26
 
 - Preserve legitimate empty/whitespace CLI arguments in command capture and report facts, while rejecting blank executables, NUL bytes and non-string arguments.

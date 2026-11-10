@@ -2,6 +2,10 @@
 
 Read for an identified vulnerability fix or an explicit request to validate a security patch. Scope checks to the affected trust boundary and realistic root cause. Ordinary code changes do not activate a broad security audit. Validation-only work stays read-only apart from authorized isolated test artifacts; fixing newly found issues requires fix authorization.
 
+For a broader or focused audit, use [security-audit.md](security-audit.md). Carry
+finding identity and counter-evidence forward, but distinguish finding verdict from
+repair status: a changed guard is source evidence, not behavioral verification.
+
 ## Establish the boundary and comparison
 
 Identify the affected entry point, untrusted input, intended security rule, vulnerable revision, patched revision, and legitimate behavior that must remain. Use existing local evidence first. If the vulnerable revision is unavailable, report that the red comparison was not verified; do not manufacture a baseline or claim a reproduction from an import error, timeout, or unrelated crash.

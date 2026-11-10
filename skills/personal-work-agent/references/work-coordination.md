@@ -20,6 +20,28 @@ Link relevant authoritative glossary, decision and spec anchors using [project-k
 
 ## Keep one contract across stages
 
+For complex, cross-skill or resumed work, keep a compact routing decision in the
+existing ledger/conversation: current stage and primary workflow, the concrete
+reason for each selected helper, its owned paths/boundary, required input and
+returned artifact/evidence. Record a competing guide as unused only when needed
+to explain a real conflict. Do not generate a catalogue of every skipped skill,
+new tracking files or worker processes for a routine task.
+
+Retain accepted quality targets with units and test environment alongside functional
+acceptance; [quality-contract.md](quality-contract.md) applies when establishing or
+materially changing those targets. At a stage transition, name what was actually
+completed, which evidence still matches, and which workflow owns the next step.
+Audit stays review-only; planned work is not implemented and a first-release
+handoff does not become production readiness. Available specialists are selected
+by the task and current host, not a remembered path or an instruction to install.
+
+Skill selection and delegation are different: reading a guide in the current
+agent does not launch an independent worker. Record actual reads/calls/results
+when claiming them; a selection note or self-report does not prove execution.
+PWA retains integration and final acceptance responsibility. These rules do not
+create a scheduler, filesystem lock or sandbox; use supported host mechanisms
+when isolation is required and disclose unavailable enforcement.
+
 Carry an approved issue brief or architecture choice into implementation/TDD and handoff by reference, retaining exact limits, units, errors, negative cases and non-goals. Add only changed decisions, completed acceptance items and open work; do not create competing specs or restart settled clarification. A brief or recommendation marked proposed stays proposed until actually accepted.
 
 Before continuation, reconcile the recorded repository/revision and dirty paths with the current workspace; when Git is unavailable use actual file identities and disclose the limitation. Re-read the authoritative contract and check that referenced evidence belongs to the same code, configuration and relevant environment. Reuse valid evidence, but rerun affected checks after relevant changes and before a new completion claim. A previous agent's "green" summary, an old line number or a planned command is not fresh verification. Preserve user edits and changed requirements; surface material conflicts rather than choosing silently.

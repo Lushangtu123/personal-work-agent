@@ -1,10 +1,29 @@
 # Personal Work Agent
 
-面向个人工作的 AI 技能包，当前版本 **0.9.8**。
+面向个人工作的 AI 技能包，当前版本 **0.9.15**。
 
 Personal Work Agent（PWA）把一个工作请求推进为有依据、可检查的结果：先理解目标与现有材料，再选择合适的工作流和可用工具，在授权范围内执行，最后核对实际结果并说明仍未验证的部分。适用任务包括维护已有代码、从零构建软件、制作办公交付物，以及开展投资研究。
 
 这个仓库包含两个技能、配套参考说明、输出模板，以及校验和评估材料。技能提供工作方法与执行约束；具体能读取什么、运行什么、生成什么，取决于当前 AI 宿主提供的工具、执行环境、已安装技能和用户授权。
+
+## 0.9.15 更新内容
+
+- 在表结构、迁移和持久化写入受影响时检查[数据库完整性](skills/personal-work-agent/references/backend-reliability.md#database-integrity)，覆盖约束、软删除、状态转换、历史数据与替代写入者。
+- 按用户请求审计[指定知识记录和可访问的记忆来源](skills/personal-work-agent/references/project-knowledge.md#audit-named-records-or-memory-sources)，提供来源和处理建议，按用户选定范围应用修改。
+- 2026-11-10 在本机 Codex 上重跑 26 个行为场景，主评审记录 26/26 通过，达到 24/26 门槛。166 项评测工具测试通过。每项运行一次，Next.js 和 Office 含评审补验。新增定向用例见[数据库与知识审计说明](evals/integrity-knowledge.md)。
+
+## 0.9.14 更新内容
+
+- 为维护和新项目补充[质量目标约定](skills/personal-work-agent/references/quality-contract.md)与[运行就绪检查](skills/personal-work-agent/references/operational-readiness.md)，按任务风险选择容量、恢复、观测和发布检查。
+- 在复杂或续接任务中记录所选技能的理由、职责边界和返回证据，便于 Project Builder 与维护流程交接。
+- 0.9.12 和 0.9.13 分别补充了[工具调用与上下文管理](skills/personal-work-agent/references/token-efficiency.md)和[限定范围的安全审查](skills/personal-work-agent/references/security-audit.md)。
+- 新增评估样例覆盖按需加载、专家不可用和证据失效。原有 26 场景和验收阈值保留。详见[质量与协调评估说明](evals/quality-coordination.md)。
+
+## 0.9.11 更新内容
+
+- 后端可靠性：按受影响范围检查错误与假成功、N+1／无界查询、并发状态不变量，以及网络调用的总预算与安全重试。规则不强制使用特定框架、ORM 或锁。详见[后端可靠性指南](skills/personal-work-agent/references/backend-reliability.md)。
+- 前端视觉工作：可按需选择当前宿主已安装的 Hallmark，保留项目设计规范和原始检查等级，逐条记录适用性、处理理由和证据。Hallmark 适配技能单独分发，本仓库仍只包含 PWA 与 Project Builder；没有安装时使用可用替代方式。
+- 评测：补充后端离线样例与 Hallmark 路由边界。原有 26 场景与验收阈值保持；新增用例和规则不代表已完成新的独立模型评测，也不构成生产环境验证。详见[后端样例说明](evals/backend-reliability.md)和[行为评估说明](evals/behavior.md)。
 
 ## 适合处理哪些任务
 

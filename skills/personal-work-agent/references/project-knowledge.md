@@ -1,6 +1,6 @@
 # Project vocabulary and lasting decisions
 
-Use when ambiguous project terminology or important design choices affect the task, or when the user asks to document them. Ordinary small changes need no glossary, ADR, or documentation ceremony. This is shared guidance for PWA and the bundled Project Builder, not another requirements interview.
+Use when ambiguous project terminology or important design choices affect the task, or when the user asks to document or audit named knowledge sources. Ordinary small changes need no glossary, ADR, or documentation ceremony. This is shared guidance for PWA and the bundled Project Builder, not another requirements interview.
 
 ## Find the existing source of truth
 
@@ -22,6 +22,25 @@ Use the existing document structure; these fields are content guidance, not a ma
 Record a decision as accepted only when supported by user confirmation or an authoritative existing decision. Otherwise mark proposed or unresolved. Include the actual decision date when known; distinguish a later documentation date instead of inventing history. A documented accepted choice is not proof it has been implemented or tested.
 
 An ADR is optional: use one for a lasting tradeoff that cannot be captured clearly in the existing decision record. Preserve superseded decisions and link their replacements rather than erasing the original rationale. Do not invent alternatives or reasons the user never considered; label newly supplied analysis as such.
+
+## Audit named records or memory sources
+
+Use only when requested. Identify the files or host surfaces in scope, what is
+actually visible, and any missing source. Treat excerpts and summaries as partial
+views. Avoid claiming a complete inventory or deletion from sources the host does
+not expose.
+
+Return a read-only audit with source anchors and recommended treatment for relevant
+duplicates, stale entries and conflicts. Use authority, scope, dates and explicit
+replacement evidence to determine what applies. Leave genuine conflicts unresolved.
+Preserve the rationale and replacement link for superseded project decisions. For
+personal preferences, identify the current effective preference when the evidence
+supports it. A proposal, a decision and a host memory record have separate effects.
+
+Apply only explicitly selected changes on the named surface using available controls.
+Verify the resulting item in that source where possible. Report applied, blocked
+and unverified changes by source. A corrected summary does not prove that underlying
+chats, files or other sources were updated or removed.
 
 ## Respect the task's writing boundary
 

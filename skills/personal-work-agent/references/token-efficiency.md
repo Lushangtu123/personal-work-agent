@@ -28,6 +28,38 @@ For semantic search, summarization, or extraction where layout is not authoritat
 
 Use an already-available MarkItDown installation only as an optional extraction helper. Do not install it implicitly. Prefer the format-specific document, presentation, spreadsheet, or PDF skill when the task depends on layout, tracked changes, comments, formulas, charts, images, pagination, accessibility, or editability. Sanitize untrusted inputs and use the narrowest local conversion surface available.
 
+## Retrieve large inputs selectively
+
+For large logs, search results and tool responses, start with the question to
+resolve and the smallest useful scope: request/job ID, time range, file path,
+symbol or error signature. Prefer targeted search, bounded excerpts and error
+summaries before loading full output. Include nearby causes and final-state
+events; the first error or a successful later request may belong to another flow.
+
+Keep the original artifact available at its authorized location and retain its
+identity and line/time anchors. Set output bounds before retrieval when the tool
+supports them. A truncated response or a no-match within one slice does not prove
+absence in the original. If a summary omits decisive context, conflicts with raw
+evidence or cannot support the requested conclusion, expand the relevant slice
+or read the original before deciding; leave unavailable evidence unverified.
+Small inputs and exact-byte/order/absence checks may need direct reading.
+
+## Reassess calls that add no evidence
+
+Give a tool call a concrete unresolved question or required action; independent
+reads can be batched. Do not narrate a plan for every call or impose a universal
+call quota. Necessary validation, negative controls and a changed-state recheck
+can be useful even when their result repeats an earlier observation.
+
+When successive searches or attempts return only duplicate, irrelevant or the
+same inaccessible results, pause that approach. Recheck the target, scope,
+capability/access and hypothesis; choose a discriminating query or supported
+fallback, or report the missing prerequisite. Do not cycle through equivalent
+tools, widen into unrelated/private sources or retry merely to consume a budget.
+The existing same-fix failure rule in [code-maintenance.md](code-maintenance.md)
+still applies; uncertain external writes require reconciliation under
+[permissions.md](permissions.md), not an efficiency-driven retry.
+
 ## Large-input compression
 
 Compress only large, repetitive, recoverable input such as logs, test output, or machine-generated JSON/CSV when the original remains available on demand. Bypass compression for small inputs and when exact source text, code, ordering, formatting, or absence of a field is evidence. Recover the original immediately when the compressed view does not support a confident conclusion.

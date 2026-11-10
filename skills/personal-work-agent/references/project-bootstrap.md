@@ -26,6 +26,11 @@ Before scaffolding, resolve or make explicit assumptions about:
 - Runtime, deployment environment, privacy, security, and budget constraints.
 - Key data entities, external systems, and interfaces.
 
+For a maintained product, use [quality-contract.md](quality-contract.md) to retain
+only applicable measurable quality goals and their authority, workload and checks.
+A plan must distinguish accepted constraints from proposals and unknowns; do not
+invent service objectives or infrastructure for a local utility.
+
 Offer materially different architecture choices when the decision affects cost, complexity, or future constraints. Obtain direction before a choice would substantially change the product.
 
 ## Select the smallest viable architecture
@@ -37,6 +42,10 @@ Use repository or user constraints first. When none exist, use the personal engi
 - Add caching, queues, search engines, analytics stores, or additional databases only for a demonstrated requirement.
 - Include meaningful tests and appropriate available lint, type, build, and CI checks; do not add irrelevant tools solely to fill a checklist.
 - Keep secrets out of source control and provide non-sensitive environment examples.
+
+For a schema or durable writes in scope, use the database integrity section of
+[backend-reliability.md](backend-reliability.md) to choose store-level rules and
+the applicable acceptance checks.
 
 ## Build in vertical slices
 

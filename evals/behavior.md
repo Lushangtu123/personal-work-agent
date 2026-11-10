@@ -82,4 +82,26 @@ These unit tests intentionally include deterministic positive and negative contr
 
 ## Additional maintenance fixtures
 
+For measurable quality goals, operational-readiness evidence and scoped routing/
+continuation, see [quality-coordination.md](quality-coordination.md). Its six
+forward tasks include a small-task control, missing/conflicting specialists and
+changed-config handoff. Planning/review runs are not production-load validation.
+
+For scoped security review, counter-evidence, remote-control uncertainty and patch
+bypass checks, see [security-audit.md](security-audit.md). These four supplemental
+tasks require native trace and semantic review; they do not change core26 or turn
+source inspection into production security qualification.
+
+For bounded log retrieval, recovery from incomplete summaries, search reassessment
+and a small-task control, see [token-efficiency.md](token-efficiency.md). These
+supplemental forward tasks require actual tool traces; fixture unit tests do not
+establish agent efficiency or token savings.
+
+For backend errors, query growth, concurrent state and network-policy work, see
+[backend-reliability.md](backend-reliability.md). Its offline task is supplemental;
+controlled fixture repairs are not independent native-model behavior runs and do
+not change the core26 release contract.
+
 `fixtures/property-contract` and `fixtures/security-patch` contain small offline tasks for independent model runs. Copy each directory into a fresh workspace and supply only its task, raw files, and the selected frozen skill. They are not `behavior.py` CLI cases and have no automatic artifact verdict. Inspect changes before executing code, independently check the product contract and original/variant/benign outcomes, then retain evidence and review limitations. Existing starter tests are not hidden acceptance tests.
+
+Behavior case version 5 adds five Hallmark routing boundaries (explicit audit, backend exclusion, absent skill, generic accessibility audit and unavailable browser) without changing the 26 core scenarios or their release thresholds. New cases require fresh native observations; deterministic evaluator controls alone do not qualify routing behavior.
