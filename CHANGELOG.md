@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.9.15 — 2026-11-10
+
+- Route schema, migration and durable-write changes to scoped database integrity checks, including existing data, alternate writers and final stored state.
+- Add an opt-in, read-only audit for named project records or accessible memory sources, with evidence and approval before applying any recommendation.
+- Add supplemental database and knowledge-audit cases. Preserve the core26 scenarios, release thresholds and token-efficiency reference.
+
 ## 0.9.14 — 2026-11-02
 
 - Carry applicable quality goals with source authority, exact units, workload/environment and acceptance through project setup and handoff.

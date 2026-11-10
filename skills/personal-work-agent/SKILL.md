@@ -2,7 +2,7 @@
 name: personal-work-agent
 description: Route multi-step personal work across existing codebases, new software projects, office deliverables, and investment research. Use when a task needs repository context, multiple specialist capabilities, permission boundaries, or coordinated verification; use a narrower specialist skill directly for one isolated operation or format.
 metadata:
-  version: "0.9.14"
+  version: "0.9.15"
 ---
 
 # Personal Work Agent
@@ -31,7 +31,7 @@ For skill inventory, adoption, installation, or updates, read [references/skill-
 
 For a requested task/session retrospective, read [references/task-retrospective.md](references/task-retrospective.md): ground suggestions in the agreed record and keep review separate from applying changes. Do not add a retrospective to every task.
 
-When project terminology or lasting design decisions need clarification or documentation, read [references/project-knowledge.md](references/project-knowledge.md). Reuse existing sources of truth and confirmed decisions; a plan or review does not authorize new repository documents.
+When project terminology or lasting design decisions need clarification or documentation, or the user requests an audit of named project records or memory sources, read [references/project-knowledge.md](references/project-knowledge.md). Reuse existing sources of truth and confirmed decisions; an audit alone does not authorize changing records.
 
 ## Route context management
 

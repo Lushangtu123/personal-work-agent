@@ -37,9 +37,9 @@ For issue/backlog triage or a report that needs an execution brief, read [issue-
 
 Trace the affected entry point, call path, data contract, persistence, tests, and user-visible behavior. Check for implications to authentication, authorization, migrations, caching, queues, environment variables, API compatibility, accessibility, and deployment.
 
-When the affected path changes backend error handling, database access, concurrent
-state transitions, jobs/webhooks or outbound HTTP/RPC calls, read the relevant
-sections of [backend-reliability.md](backend-reliability.md) before implementation
+When the affected path changes backend error handling, database schema, migrations
+or access, concurrent state transitions, jobs/webhooks or outbound HTTP/RPC calls,
+read the relevant sections of [backend-reliability.md](backend-reliability.md) before implementation
 or review. Carry its affected-risk checks into final validation; ordinary wording,
 frontend presentation or isolated calculation work does not trigger a service audit.
 

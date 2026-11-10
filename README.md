@@ -1,10 +1,16 @@
 # Personal Work Agent
 
-面向个人工作的 AI 技能包，当前版本 **0.9.14**。
+面向个人工作的 AI 技能包，当前版本 **0.9.15**。
 
 Personal Work Agent（PWA）把一个工作请求推进为有依据、可检查的结果：先理解目标与现有材料，再选择合适的工作流和可用工具，在授权范围内执行，最后核对实际结果并说明仍未验证的部分。适用任务包括维护已有代码、从零构建软件、制作办公交付物，以及开展投资研究。
 
 这个仓库包含两个技能、配套参考说明、输出模板，以及校验和评估材料。技能提供工作方法与执行约束；具体能读取什么、运行什么、生成什么，取决于当前 AI 宿主提供的工具、执行环境、已安装技能和用户授权。
+
+## 0.9.15 更新内容
+
+- 在表结构、迁移和持久化写入受影响时检查[数据库完整性](skills/personal-work-agent/references/backend-reliability.md#database-integrity)，覆盖约束、软删除、状态转换、历史数据与替代写入者。
+- 按用户请求审计[指定知识记录和可访问的记忆来源](skills/personal-work-agent/references/project-knowledge.md#audit-named-records-or-memory-sources)，提供来源和处理建议，按用户选定范围应用修改。
+- 2026-11-10 在本机 Codex 上重跑 26 个行为场景，主评审记录 26/26 通过，达到 24/26 门槛。166 项评测工具测试通过。每项运行一次，Next.js 和 Office 含评审补验。新增定向用例见[数据库与知识审计说明](evals/integrity-knowledge.md)。
 
 ## 0.9.14 更新内容
 

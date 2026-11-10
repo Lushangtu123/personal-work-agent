@@ -1,7 +1,7 @@
 # Backend reliability at the affected boundary
 
 Read the relevant sections when implementing, diagnosing or reviewing backend
-error handling, database access, shared-state transitions, jobs/webhooks or
+error handling, database schema, migrations, access, shared-state transitions, jobs/webhooks or
 outbound HTTP/RPC calls. Mere presence of a backend does not trigger a whole-service
 audit. Skip for isolated wording, frontend presentation or pure computation that
 does not affect these boundaries. Review/diagnosis alone remains read-only.
@@ -48,6 +48,35 @@ proxy behavior is part of the effective policy, not evidence that it is correct.
   and result assertions. Query plans and latency are useful when relevant, not
   substitutes for output correctness or call growth. A mocked repository call
   count cannot certify ORM/SQL execution; identify that narrower boundary.
+
+## Database integrity
+
+Use for changes to schema, migrations or persisted writes that affect an invariant.
+Identify the rule and the affected writers, including imports, jobs and migrations.
+Put stable rules in the actual store where practical and keep application validation
+for business decisions and useful errors.
+
+- Use native nullability, check, uniqueness or foreign-key constraints where they
+  express the rule. For PostgreSQL, `CHECK (amount > 0)` permits NULL, so pair it with
+  `NOT NULL` when the amount is required. Avoid a row check for rules that depend on
+  other rows. Verify the actual engine and version.
+- A foreign key checks that the parent exists. If the contract also requires an
+  active parent, define what happens on new links, parent archival and restoration.
+  Where those operations can race, choose enforcement that coordinates both writes.
+  Keep historical links when the contract requires them.
+- A status constraint limits values. Enforce legal transitions against the prior
+  state at the shared write boundary or in the store when independent writers can
+  bypass that boundary. Use the concurrency checks below for atomic updates and
+  conflict handling.
+- Before tightening a constraint on existing data, identify violating rows in an
+  authorized snapshot, choose a reviewed treatment, and assess scan/lock and
+  rollback implications. Stage validation where the engine supports it. Distinguish
+  enforced new writes from verified historical data and preserve authorization for
+  any migration or data repair.
+- When claiming enforcement, verify the applicable valid and rejected writes and
+  committed state on the relevant engine. Exercise alternate write paths or a
+  direct store test when claiming protection outside the application. For a
+  migration, also check representative old rows and the post-migration state.
 
 ## Concurrent state transitions
 
@@ -113,6 +142,7 @@ review evidence and executed check. Keep the scope compact:
 | --- | --- | --- |
 | False success | What does a failed required dependency return and commit? | Forced failure + expected error/state; legitimate success |
 | N+1/unbounded I/O | How do calls/rows grow with input size? | Small/larger sets, query counters, bounds and output/order assertions |
+| Data integrity | Which store or shared write rule covers each affected writer and existing rows? | Accepted and rejected writes, persisted state, and migration evidence where applicable |
 | Race | What enforces the invariant across contenders? | Controlled overlapping work, success/conflict counts and final state |
 | Timeout/retry | What bounds total time and prevents unsafe replay? | Client policy, attempts/waits, observed deadline/cancel and effect count |
 
@@ -126,6 +156,8 @@ authorized by this reference. Do not expand a narrow repair into a framework rew
 
 Primary references (reviewed2026-10-30; use documentation matching the repository):
 [ORM loading strategies](https://docs.sqlalchemy.org/en/20/orm/queryguide/relationships.html),
+[PostgreSQL constraints](https://www.postgresql.org/docs/current/ddl-constraints.html),
+[PostgreSQL migration and validation](https://www.postgresql.org/docs/current/sql-altertable.html#SQL-ALTERTABLE-NOTES),
 [transaction isolation](https://www.postgresql.org/docs/current/transaction-iso.html),
 [RPC deadlines](https://grpc.io/docs/guides/deadlines/) and
 [retry policy](https://grpc.io/docs/guides/retry/). These are examples of mechanisms,

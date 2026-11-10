@@ -2,7 +2,7 @@
 name: project-builder
 description: Build new software projects from an idea or approved brief through a verified first release. Use when starting an app, service, CLI, library, or prototype from scratch, or resuming its unfinished initial build. Works directly or as Personal Work Agent's greenfield specialist; not the default for routine changes to an established project.
 metadata:
-  version: "0.9.14"
+  version: "0.9.15"
 ---
 
 # Project Builder
@@ -70,6 +70,11 @@ deadline/retry policy safe for the operation's semantics. Verify only relevant
 boundaries with native evidence; transactions alone and fake-client tests do not
 prove production concurrency or network behavior. Do not install PWA to resolve
 the link, mandate a framework or add a retry layer over an existing SDK by default.
+
+When choosing a schema or changing migrations or durable writes, use the database
+integrity section of that guide before implementation. For standalone use, define
+which rules the store enforces across writers, how existing rows are handled, and
+which valid/rejected writes and committed state the release will check.
 
 For independent parallel work, assign non-overlapping owned paths and explicit interface contracts. Integrate and verify the combined result before claiming completion; a worker's report is not evidence by itself.
 

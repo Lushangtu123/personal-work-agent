@@ -43,6 +43,10 @@ Use repository or user constraints first. When none exist, use the personal engi
 - Include meaningful tests and appropriate available lint, type, build, and CI checks; do not add irrelevant tools solely to fill a checklist.
 - Keep secrets out of source control and provide non-sensitive environment examples.
 
+For a schema or durable writes in scope, use the database integrity section of
+[backend-reliability.md](backend-reliability.md) to choose store-level rules and
+the applicable acceptance checks.
+
 ## Build in vertical slices
 
 Create the smallest end-to-end path that demonstrates the core value, then add capabilities incrementally. Each slice should include appropriate tests and an observable completion condition.
