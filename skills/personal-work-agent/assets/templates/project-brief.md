@@ -51,6 +51,17 @@ Describe the user-visible or operational result this project must achieve.
 - Security checks:
 - Performance or accessibility targets:
 
+For applicable maintained-product goals, retain only useful rows:
+
+| Goal and source | Authority (accepted/proposed/unknown) | Target and units | Workload/environment | Check and current evidence/gap |
+|---|---|---|---|---|
+| | | | | |
+
+Consider relevant failure/data invariants, capacity/resources, recovery limits,
+security boundaries and compatibility. Do not invent numeric thresholds or add
+service requirements to a local utility. Operational goals need actual lifecycle,
+load, observability, restore or rollout evidence where agreed.
+
 ## Delivery and deferred work
 
 - Completion evidence:

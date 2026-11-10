@@ -1,10 +1,17 @@
 # Personal Work Agent
 
-面向个人工作的 AI 技能包，当前版本 **0.9.11**。
+面向个人工作的 AI 技能包，当前版本 **0.9.14**。
 
 Personal Work Agent（PWA）把一个工作请求推进为有依据、可检查的结果：先理解目标与现有材料，再选择合适的工作流和可用工具，在授权范围内执行，最后核对实际结果并说明仍未验证的部分。适用任务包括维护已有代码、从零构建软件、制作办公交付物，以及开展投资研究。
 
 这个仓库包含两个技能、配套参考说明、输出模板，以及校验和评估材料。技能提供工作方法与执行约束；具体能读取什么、运行什么、生成什么，取决于当前 AI 宿主提供的工具、执行环境、已安装技能和用户授权。
+
+## 0.9.14 更新内容
+
+- 为维护和新项目补充[质量目标约定](skills/personal-work-agent/references/quality-contract.md)与[运行就绪检查](skills/personal-work-agent/references/operational-readiness.md)，按任务风险选择容量、恢复、观测和发布检查。
+- 在复杂或续接任务中记录所选技能的理由、职责边界和返回证据，便于 Project Builder 与维护流程交接。
+- 0.9.12 和 0.9.13 分别补充了[工具调用与上下文管理](skills/personal-work-agent/references/token-efficiency.md)和[限定范围的安全审查](skills/personal-work-agent/references/security-audit.md)。
+- 新增评估样例覆盖按需加载、专家不可用和证据失效。原有 26 场景和验收阈值保留。详见[质量与协调评估说明](evals/quality-coordination.md)。
 
 ## 0.9.11 更新内容
 

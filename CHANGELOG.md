@@ -2,6 +2,25 @@
 
 ## Unreleased
 
+## 0.9.14 — 2026-11-02
+
+- Carry applicable quality goals with source authority, exact units, workload/environment and acceptance through project setup and handoff.
+- Add on-demand operational readiness guidance for lifecycle, sustained capacity, dependency recovery, observability, data restoration and rollout, with explicit execution boundaries.
+- Retain compact workflow/helper ownership and return evidence for complex/resumed work without per-task tracking files or an automatic scheduler.
+- Add supplemental forward scenarios for relevant/irrelevant routing, unavailable or conflicting guides and stale continuation evidence; core26 cases and thresholds remain unchanged.
+
+## 0.9.13 — 2026-11-02
+
+- Add on-demand security-audit coverage, counter-evidence, stable finding verdicts and independent-review boundaries, with an optional scoped report template.
+- Keep source conclusions, runtime-dependent claims and repair verification separate; preserve existing patch original/variant/benign checks and missing-evidence outcomes.
+- Add four offline security-review forward tasks without external scanners, hooks, dependency installs, live probes or changes to core26 scoring and thresholds. Observed runs and limitations are recorded separately.
+
+## 0.9.12 — 2026-10-31
+
+- Prefer targeted bounded retrieval with original-evidence anchors and recovery when summaries are insufficient.
+- Reassess repeated tool attempts that add no evidence, while preserving required validation, same-fix diagnosis and uncertain-write reconciliation.
+- Add offline token-efficiency forward tasks and a small-task control; preserve core26 scenarios, routing decisions and release thresholds. Actual behavior and savings require separate observed runs.
+
 ## 0.9.11 — 2026-10-30
 
 - Add conditional backend reliability guidance for truthful failures, query/fan-out growth, shared-state invariants and bounded safe network retries.

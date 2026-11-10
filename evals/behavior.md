@@ -82,6 +82,21 @@ These unit tests intentionally include deterministic positive and negative contr
 
 ## Additional maintenance fixtures
 
+For measurable quality goals, operational-readiness evidence and scoped routing/
+continuation, see [quality-coordination.md](quality-coordination.md). Its six
+forward tasks include a small-task control, missing/conflicting specialists and
+changed-config handoff. Planning/review runs are not production-load validation.
+
+For scoped security review, counter-evidence, remote-control uncertainty and patch
+bypass checks, see [security-audit.md](security-audit.md). These four supplemental
+tasks require native trace and semantic review; they do not change core26 or turn
+source inspection into production security qualification.
+
+For bounded log retrieval, recovery from incomplete summaries, search reassessment
+and a small-task control, see [token-efficiency.md](token-efficiency.md). These
+supplemental forward tasks require actual tool traces; fixture unit tests do not
+establish agent efficiency or token savings.
+
 For backend errors, query growth, concurrent state and network-policy work, see
 [backend-reliability.md](backend-reliability.md). Its offline task is supplemental;
 controlled fixture repairs are not independent native-model behavior runs and do

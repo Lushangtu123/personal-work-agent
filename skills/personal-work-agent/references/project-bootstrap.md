@@ -26,6 +26,11 @@ Before scaffolding, resolve or make explicit assumptions about:
 - Runtime, deployment environment, privacy, security, and budget constraints.
 - Key data entities, external systems, and interfaces.
 
+For a maintained product, use [quality-contract.md](quality-contract.md) to retain
+only applicable measurable quality goals and their authority, workload and checks.
+A plan must distinguish accepted constraints from proposals and unknowns; do not
+invent service objectives or infrastructure for a local utility.
+
 Offer materially different architecture choices when the decision affects cost, complexity, or future constraints. Obtain direction before a choice would substantially change the product.
 
 ## Select the smallest viable architecture

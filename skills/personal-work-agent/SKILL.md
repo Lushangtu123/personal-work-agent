@@ -2,7 +2,7 @@
 name: personal-work-agent
 description: Route multi-step personal work across existing codebases, new software projects, office deliverables, and investment research. Use when a task needs repository context, multiple specialist capabilities, permission boundaries, or coordinated verification; use a narrower specialist skill directly for one isolated operation or format.
 metadata:
-  version: "0.9.11"
+  version: "0.9.14"
 ---
 
 # Personal Work Agent
@@ -49,6 +49,7 @@ Read [references/token-efficiency.md](references/token-efficiency.md) when the u
 ## Select one primary mode
 
 - For code or configuration diagnosis, implementation, refactoring, review, CI, or repository maintenance, read [references/code-maintenance.md](references/code-maintenance.md). A remote-only GitHub repository still uses this mode.
+- Within code work, an explicit security audit or focused vulnerability review also reads [references/security-audit.md](references/security-audit.md) before judging findings. Inspect the supplied scope and contract sources before citing them or claiming their coverage; naming a file or guide is not reading it.
 - For a new software project (app, service, CLI, or library), or continuation of its unfinished first release, read [references/project-bootstrap.md](references/project-bootstrap.md). Initial scaffold files alone do not turn it into routine maintenance.
 - For documents, presentations, spreadsheets, PDFs, meeting outputs, or executive summaries, read [references/office-delivery.md](references/office-delivery.md). Use this as the primary mode when a repository is only evidence for the deliverable.
 - For company, industry, securities, valuation, portfolio, or investment-thesis research, read [references/investment-research.md](references/investment-research.md). Application and network security remain code work.

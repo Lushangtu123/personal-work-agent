@@ -2,7 +2,7 @@
 name: project-builder
 description: Build new software projects from an idea or approved brief through a verified first release. Use when starting an app, service, CLI, library, or prototype from scratch, or resuming its unfinished initial build. Works directly or as Personal Work Agent's greenfield specialist; not the default for routine changes to an established project.
 metadata:
-  version: "0.9.11"
+  version: "0.9.14"
 ---
 
 # Project Builder
@@ -31,6 +31,14 @@ Reuse answers already provided. Resolve only choices that materially change impl
 - First-release capabilities, non-goals, and prototype versus maintained-product intent.
 - Target directory, platform/runtime, data sensitivity, external systems, hosting and cost constraints.
 - Acceptance examples for the core flow and its important failure paths.
+
+For a maintained product or material operating design, read the available bundled
+[quality contract](../personal-work-agent/references/quality-contract.md). Keep
+applicable reliability, workload/latency/resource, recovery, security and maintenance
+goals in the existing brief with source, exact units, environment and verification.
+Separate accepted targets from proposals and unknowns. Standalone without that
+reference, retain those essentials directly; do not install PWA or impose service
+objectives on a small local utility. Resolve only consequential missing choices.
 
 For a clear small request, state reasonable assumptions and proceed. For consequential uncertainty, use an available clarification/design skill or ask the smallest useful question before committing to that choice. Do not silently turn a multi-user product into a local demo, or invent user approval. Keep a durable brief only when it helps substantial or cross-session work; do not create a fixed pile of planning documents for every project.
 
@@ -77,6 +85,14 @@ browser acceptance. Ordinary backend, CI and localized bug work do not trigger i
 ## Verify and hand off
 
 Read [references/acceptance.md](references/acceptance.md) before the first-release claim. A scaffold, server startup, screenshot, or green unit suite alone does not establish the requested outcome. If the environment blocks execution, preserve useful work and report the exact blocked check instead of claiming readiness.
+
+When service lifecycle, sustained capacity, observability, backup/restore or rollout
+is part of acceptance, use the available bundled
+[operational readiness](../personal-work-agent/references/operational-readiness.md)
+guide. Without it, retain the agreed goal/environment, bounded check, observed
+outcome and explicit gaps; a health200, backup file or local unit pass does not
+prove those operating goals. No shared-system load, fault injection, restoration,
+alert sending or deployment is implicitly authorized by a readiness review.
 
 Provide the project location, actual start/test commands and prerequisites, supported user flows, acceptance evidence, relevant decisions, and remaining gaps. Update an existing README or equivalent entry document when appropriate; do not leave essential setup only in chat.
 
